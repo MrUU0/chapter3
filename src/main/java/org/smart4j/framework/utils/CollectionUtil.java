@@ -9,7 +9,7 @@ import java.util.Map;
 /**
  * Created by wangz on 2017/8/8.
  */
-public class CollectionUtil {
+public final class CollectionUtil {
 
     /**
      * @param collection

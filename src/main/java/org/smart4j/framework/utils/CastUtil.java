@@ -4,7 +4,8 @@ import org.apache.commons.lang3.StringUtils;
 
 /**
  * Created by wangz on 2017/8/8.
- */public class CastUtil {
+ */
+public final class CastUtil {
     /*
        * 转为String型
        * */

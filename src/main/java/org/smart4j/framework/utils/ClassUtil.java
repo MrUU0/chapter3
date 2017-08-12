@@ -21,7 +21,7 @@ import java.util.jar.JarFile;
  * @Class ClassUtil
  * @create 2017-08-10
  **/
-public class ClassUtil {
+public final class ClassUtil {
 
    private static final Logger logger = LoggerFactory.getLogger(ClassUtil.class);
 
@@ -50,6 +50,16 @@ public class ClassUtil {
            throw new RuntimeException(e);
        }
        return cls;
+   }
+
+    /**
+     * 加载类，需提供类名（全名）
+     * 不做类的初始化（此处的初始化指的是是否执行类的静态代码块）
+     * @param className
+     * @return
+     */
+   public static Class<?> loadClass(String className){
+       return loadClass(className, false);
    }
 
     /**
