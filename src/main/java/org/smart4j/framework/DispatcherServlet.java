@@ -99,17 +99,19 @@ public class DispatcherServlet extends HttpServlet {
                         }
                         req.getRequestDispatcher(ConfigHelper.getAppJspPath() + path).forward(req, resp);
                     }
-                } else if (result instanceof Data) {
-                    //返回 JSON 数据
-                    Data data = (Data) result;
-                    Object model = data.getModel();
-                    if (model != null) {
-                        resp.setContentType("application/json");
-                        resp.setCharacterEncoding("UTF-8");
-                        PrintWriter writer = resp.getWriter();
-                        String json = JsonUtil.toJson(model);
-                        writer.write(json);
-                    }
+                }
+            } else if (result instanceof Data) {
+                //返回 JSON 数据
+                Data data = (Data) result;
+                Object model = data.getModel();
+                if (model != null) {
+                    resp.setContentType("application/json");
+                    resp.setCharacterEncoding("UTF-8");
+                    PrintWriter writer = resp.getWriter();
+                    String json = JsonUtil.toJson(model);
+                    writer.write(json == null ? "":json);
+                    writer.flush();
+                    writer.close();
                 }
             }
 

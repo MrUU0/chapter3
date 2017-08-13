@@ -1,0 +1,13 @@
+# MAVEN #
+traget/
+
+# IDEA #
+.idea/
+*.iml
+
+# Eclipse #
+.settings/
+.metadata/
+.classpath
+.project
+Services/
