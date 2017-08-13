@@ -63,7 +63,7 @@ public class PropsUtil {
      * @return
      */
     public static String getString( Properties props, String key, String defaultValue){
-        if( props.contains(key))
+        if( props.containsKey(key))
             return props.getProperty(key);
         return defaultValue;
     }

@@ -26,7 +26,7 @@ public class HelperLoader {
                 ControllerHelper.class
         };
         for (Class<?> cls : classList) {
-            ClassUtil.loadClass(cls.getName());
+            ClassUtil.loadClass(cls.getName(),true);
         }
     }
 }

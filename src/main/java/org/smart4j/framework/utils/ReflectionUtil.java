@@ -40,15 +40,13 @@ public class ReflectionUtil {
      * @return
      */
     public static Object invokeMethod(Object obj, Method method, Object... args){
-        Object result;
         try {
             method.setAccessible(true);
-            result = method.invoke(obj, args);
+            return method.invoke(obj, args);
         } catch (Exception e) {
             logger.error("invoke method failure, method："+method, e);
             throw new RuntimeException(e);
         }
-        return result;
     }
 
     /**
@@ -66,4 +64,5 @@ public class ReflectionUtil {
             throw new RuntimeException(e);
         }
     }
+
 }

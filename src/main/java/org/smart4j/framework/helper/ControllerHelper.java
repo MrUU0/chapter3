@@ -37,7 +37,7 @@ public final class ControllerHelper {
                             Action action = method.getAnnotation(Action.class);
                             String mapping = action.value();
                             //验证 URL 映射规则
-                            if(mapping.matches("\\w:/\\w*")){
+                            if(mapping.matches("\\w+:/\\w*")){
                                 String[] array = mapping.split(":");
                                 if (ArrayUtil.isNotEmpty(array) && array.length == 2) {
                                     //获取请求方法 与 请求路径
